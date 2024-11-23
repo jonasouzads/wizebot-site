@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import Link from "next/link";
 
 const ErrosSection = () => {
@@ -8,7 +9,13 @@ const ErrosSection = () => {
       <div className="container">
         <div className="wizebot-errors-wrap">
           <div className="wizebot-errors-thumb">
-            <img src="/images/about/404.png" alt="" />
+            <Image 
+              src="/images/about/404.png" 
+              alt="Página não encontrada" 
+              width={600}
+              height={400}
+              style={{ width: '100%', height: 'auto' }}
+            />
           </div>
           <h2>Ops! Parece que você pegou o caminho errado</h2>
           <div className="wizebot-extara-mt">

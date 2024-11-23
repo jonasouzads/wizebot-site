@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from "next/link";
 
 const BrandLogo = ({ imageSrc }) => {
@@ -7,7 +8,14 @@ const BrandLogo = ({ imageSrc }) => {
   return (
     <div className="brand-logo">
       <Link href="/">
-        <img src={logoSrc} alt="" className="light-version-logo" />
+        <Image 
+          src={logoSrc} 
+          alt="Wizebot Logo" 
+          width={150}
+          height={40}
+          style={{ width: 'auto', height: 'auto' }}
+          className="light-version-logo"
+        />
       </Link>
     </div>
   );

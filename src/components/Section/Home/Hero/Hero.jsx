@@ -1,4 +1,6 @@
 "use client";
+
+import Image from 'next/image';
 import Link from "next/link";
 import { useState } from "react";
 import ReactPlayer from "react-player";
@@ -45,49 +47,70 @@ const HeroSection = () => {
                 className="video-init wizebot-hero-video"
                 onClick={openPopup}
               >
-                <img
+                <Image
                   src="/images/v1/play-btn.png"
                   alt="Play Button"
+                  width={48}
+                  height={48}
+                  style={{ width: 'auto', height: 'auto' }}
                 />
                 Veja como é Fácil
               </button>
             </div>
             <div className="wizebot-hero-shape">
-              <img
+              <Image
                 src="/images/v1/shape.png"
                 alt="Hero Shape"
+                width={600}
+                height={400}
+                style={{ width: '100%', height: 'auto' }}
               />
             </div>
           </div>
           <div className="wizebot-hero-bottom">
             <div className="wizebot-hero-thumb wow fadeInUpX">
-              <img
+              <Image
                 src="/images/v1/hero-mocup1.png"
                 alt="Hero Mocup"
+                width={800}
+                height={600}
+                style={{ width: '100%', height: 'auto' }}
               />
             </div>
             <div className="wizebot-hero-card card1 wow zoomIn">
-              <img
+              <Image
                 src="/images/v1/h-card1.png"
                 alt="Hero Card 1"
+                width={200}
+                height={150}
+                style={{ width: '100%', height: 'auto' }}
               />
             </div>
             <div className="wizebot-hero-card card2 wow zoomIn">
-              <img
+              <Image
                 src="/images/v1/h-card2.png"
                 alt="Hero Card 2"
+                width={200}
+                height={150}
+                style={{ width: '100%', height: 'auto' }}
               />
             </div>
             <div className="wizebot-hero-card card3 wow zoomIn">
-              <img
+              <Image
                 src="/images/v1/h-card4.png"
                 alt="Hero Card 3"
+                width={200}
+                height={150}
+                style={{ width: '100%', height: 'auto' }}
               />
             </div>
             <div className="wizebot-hero-card card4 wow zoomIn">
-              <img
+              <Image
                 src="/images/v1/h-card3.png"
                 alt="Hero Card 4"
+                width={200}
+                height={150}
+                style={{ width: '100%', height: 'auto' }}
               />
             </div>
           </div>
@@ -100,17 +123,16 @@ const HeroSection = () => {
         <div className="video-wrapper">
           <iframe
             id="youtube-video"
-            className="video"
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/SixdAQtWJQ8?si=TPxjQ04JgcZ5eEA9"
+            width="560"
+            height="315"
+            src=""
+            title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-
-          <button className="close-button" onClick={closePopup}>
-            <IoClose className="close-icon" />
+          <button className="popup-close" onClick={closePopup}>
+            <IoClose />
           </button>
         </div>
       </div>

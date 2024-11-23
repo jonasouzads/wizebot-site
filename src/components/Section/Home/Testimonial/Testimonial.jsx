@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import { FaHeart, FaRetweet, FaRegComment } from 'react-icons/fa';
+import Image from 'next/image';
 
 const testimonials = [
   {
@@ -86,12 +87,11 @@ const TestimonialSection = () => {
                 <div className="p-4">
                   <div className="d-flex align-items-center mb-4">
                     <div className="position-relative">
-                      <img
+                      <Image
                         src={testimonial.avatar}
-                        alt={testimonial.name}
-                        className="rounded-circle"
-                        width="52"
-                        height="52"
+                        alt={`Foto de perfil de ${testimonial.name}`}
+                        width={52}
+                        height={52}
                         style={{ 
                           objectFit: 'cover', 
                           border: '3px solid #1DA1F2',
@@ -99,50 +99,34 @@ const TestimonialSection = () => {
                         }}
                       />
                       {testimonial.verified && (
-                        <span className="position-absolute bottom-0 end-0">
-                          <img src="/images/icon/verified.svg" alt="Verificado" width="18" height="18" />
-                        </span>
+                        <div className="position-absolute" style={{ bottom: 0, right: 0 }}>
+                          <Image 
+                            src="/images/v2/verified.png" 
+                            alt="Verificado" 
+                            width={20}
+                            height={20}
+                          />
+                        </div>
                       )}
                     </div>
                     <div className="ms-3">
-                      <h5 className="mb-0 fw-bold" style={{ color: '#14171A', fontSize: '1.1rem' }}>{testimonial.name}</h5>
-                      <div className="text-muted small">
-                        <span style={{ color: '#657786' }}>{testimonial.username}</span>
-                      </div>
+                      <h5 className="mb-0 fw-bold">{testimonial.name}</h5>
+                      <p className="text-muted small mb-0">{testimonial.username}</p>
                     </div>
                   </div>
-                  <p className="mb-4" style={{ color: '#14171A', fontSize: '1rem', lineHeight: '1.5' }}>
-                    {testimonial.content}
-                  </p>
-                  <div className="border-top pt-3">
-                    <div className="d-flex justify-content-around align-items-center">
-                      <div className="d-flex align-items-center gap-2 engagement-action" 
-                           style={{ 
-                             cursor: 'pointer',
-                             transition: 'color 0.2s',
-                             ':hover': { color: '#1DA1F2' }
-                           }}>
-                        <FaRegComment style={{ color: '#657786' }} size={18} />
-                        <span style={{ color: '#657786' }}>{testimonial.comments}</span>
-                      </div>
-                      <div className="d-flex align-items-center gap-2 engagement-action"
-                           style={{ 
-                             cursor: 'pointer',
-                             transition: 'color 0.2s',
-                             ':hover': { color: '#17BF63' }
-                           }}>
-                        <FaRetweet style={{ color: '#657786' }} size={18} />
-                        <span style={{ color: '#657786' }}>{testimonial.retweets}</span>
-                      </div>
-                      <div className="d-flex align-items-center gap-2 engagement-action"
-                           style={{ 
-                             cursor: 'pointer',
-                             transition: 'color 0.2s',
-                             ':hover': { color: '#E0245E' }
-                           }}>
-                        <FaHeart style={{ color: '#E0245E' }} size={18} />
-                        <span style={{ color: '#657786' }}>{testimonial.likes}</span>
-                      </div>
+                  <p className="mb-4" style={{ fontSize: '0.95rem' }}>{testimonial.content}</p>
+                  <div className="d-flex align-items-center gap-4">
+                    <div className="d-flex align-items-center text-muted">
+                      <FaRegComment className="me-2" />
+                      <span>{testimonial.comments}</span>
+                    </div>
+                    <div className="d-flex align-items-center text-muted">
+                      <FaRetweet className="me-2" />
+                      <span>{testimonial.retweets}</span>
+                    </div>
+                    <div className="d-flex align-items-center text-muted">
+                      <FaHeart className="me-2" />
+                      <span>{testimonial.likes}</span>
                     </div>
                   </div>
                 </div>

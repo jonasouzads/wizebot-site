@@ -1,6 +1,27 @@
+import Image from 'next/image';
 import Link from "next/link";
 
 const PricingSectionTwo = () => {
+  const CheckIcon = () => (
+    <Image 
+      src="/images/icon/check.svg" 
+      alt="Incluído" 
+      width={24}
+      height={24}
+      style={{ width: 'auto', height: 'auto' }}
+    />
+  );
+
+  const MinusIcon = () => (
+    <Image 
+      src="/images/icon/minus.svg" 
+      alt="Não incluído" 
+      width={24}
+      height={24}
+      style={{ width: 'auto', height: 'auto' }}
+    />
+  );
+
   return (
     <>
       <div className="wizebot-divider"></div>
@@ -51,135 +72,135 @@ const PricingSectionTwo = () => {
                 </tr>
                 <tr>
                   <td>Painel de Controle</td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
                 </tr>
                 <tr>
                   <td>CRM para Contatos</td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
                 </tr>
                 <tr>
                   <td>Campos Personalizados</td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
                 </tr>
                 <tr>
                   <td>Disparo em Massa</td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
                 </tr>
                 <tr>
                   <td>Criador de Automações</td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
                 </tr>
                 <tr>
                   <td>Fluxos de Conversa Ilimitados</td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
                 </tr>
                 <tr>
                   <td>Palavras Chaves Ilimitadas</td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
                 </tr>
                 <tr>
                   <td>Reescrita com IA</td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
                 </tr>
                 <tr>
                   <td>Remarketing Ilimitados</td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
                 </tr>
                 <tr>
                   <td>Disparos de SMS</td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
                 </tr>
                 <tr>
                   <td>Etiquetas</td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
                 </tr>
                 <tr>
                   <td>Acesso ao Instagram</td>
-                  <td><img src="/images/icon/minus.svg" alt="Não incluído" /></td>
+                  <td><MinusIcon /></td>
                   <td>Em Breve</td>
                   <td>Em Breve</td>
                 </tr>
                 <tr>
                   <td>Inteligência Artificial ChatGPT</td>
-                  <td><img src="/images/icon/minus.svg" alt="Não incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
+                  <td><MinusIcon /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
                 </tr>
                 <tr>
                   <td>Relatórios de Cliques nos Botões</td>
-                  <td><img src="/images/icon/minus.svg" alt="Não incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
+                  <td><MinusIcon /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
                 </tr>
                 <tr>
                   <td>Integração via Webhook</td>
-                  <td><img src="/images/icon/minus.svg" alt="Não incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
+                  <td><MinusIcon /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
                 </tr>
                 <tr>
                   <td>Integração via API</td>
-                  <td><img src="/images/icon/minus.svg" alt="Não incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
+                  <td><MinusIcon /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
                 </tr>
                 <tr>
                   <td>Shopify e Woocommerce</td>
-                  <td><img src="/images/icon/minus.svg" alt="Não incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
+                  <td><MinusIcon /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
                 </tr>
                 <tr>
                   <td>Remarketing Woocommerce</td>
-                  <td><img src="/images/icon/minus.svg" alt="Não incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
+                  <td><MinusIcon /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
                 </tr>
                 <tr>
                   <td>WhatsApp Flows</td>
-                  <td><img src="/images/icon/minus.svg" alt="Não incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
+                  <td><MinusIcon /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
                 </tr>
                 <tr>
                   <td>Carrocel no WhatsApp</td>
-                  <td><img src="/images/icon/minus.svg" alt="Não incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
+                  <td><MinusIcon /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
                 </tr>
                 <tr>
                   <td>Integração Google Planilhas</td>
-                  <td><img src="/images/icon/minus.svg" alt="Não incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
+                  <td><MinusIcon /></td>
+                  <td><CheckIcon /></td>
+                  <td><CheckIcon /></td>
                 </tr>
                 <tr>
                   <td>Integração via API no ChatBot</td>
-                  <td><img src="/images/icon/minus.svg" alt="Não incluído" /></td>
-                  <td><img src="/images/icon/minus.svg" alt="Não incluído" /></td>
-                  <td><img src="/images/icon/check.svg" alt="Incluído" /></td>
+                  <td><MinusIcon /></td>
+                  <td><MinusIcon /></td>
+                  <td><CheckIcon /></td>
                 </tr>
                 <tr>
                   <td>WA+</td>

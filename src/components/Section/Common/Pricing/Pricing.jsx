@@ -2,12 +2,24 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 
 const PricingSection = () => {
   const [isMonthly, setIsMonthly] = useState(true);
   const priceToggle = () => {
     setIsMonthly(!isMonthly);
   };
+
+  const CheckIcon = () => (
+    <Image 
+      src="/images/v3/check.png" 
+      alt="Incluído" 
+      width={24}
+      height={24}
+      style={{ width: 'auto', height: 'auto' }}
+    />
+  );
+
   return (
     <div className="section wizebot-section-padding3">
       <div className="container">
@@ -57,19 +69,19 @@ const PricingSection = () => {
                 <p>O plano inclui:</p>
                 <ul>
                   <li>
-                    <img src="/images/v3/check.png" alt="" />
+                    <CheckIcon />
                     1 número de WhatsApp conectado
                   </li>
                   <li>
-                    <img src="/images/v3/check.png" alt="" />
+                    <CheckIcon />
                     Limite de Contatos: 5000
                   </li>
                   <li>
-                    <img src="/images/v3/check.png" alt="" />
+                    <CheckIcon />
                     Painel de controle completo
                   </li>
                   <li>
-                    <img src="/images/v3/check.png" alt="" />
+                    <CheckIcon />
                     2 atendentes inclusos
                   </li>
                 </ul>
@@ -100,19 +112,19 @@ const PricingSection = () => {
                 <p>O plano inclui:</p>
                 <ul>
                   <li>
-                    <img src="/images/v3/check.png" alt="" />
+                    <CheckIcon />
                     2 números de WhatsApp
                   </li>
                   <li>
-                    <img src="/images/v3/check.png" alt="" />
+                    <CheckIcon />
                     Limite de Contatos: 15000
                   </li>
                   <li>
-                    <img src="/images/v3/check.png" alt="" />
+                    <CheckIcon />
                     Suporte prioritário
                   </li>
                   <li>
-                    <img src="/images/v3/check.png" alt="" />
+                    <CheckIcon />
                     5 atendentes inclusos
                   </li>
                 </ul>
@@ -143,19 +155,19 @@ const PricingSection = () => {
                 <p>O plano inclui:</p>
                 <ul>
                   <li>
-                    <img src="/images/v3/check.png" alt="" />
+                    <CheckIcon />
                     5 números de WhatsApp
                   </li>
                   <li>
-                    <img src="/images/v3/check.png" alt="" />
+                    <CheckIcon />
                     Contatos ilimitados
                   </li>
                   <li>
-                    <img src="/images/v3/check.png" alt="" />
+                    <CheckIcon />
                     Suporte VIP
                   </li>
                   <li>
-                    <img src="/images/v3/check.png" alt="" />
+                    <CheckIcon />
                     10 atendentes inclusos
                   </li>
                 </ul>
@@ -183,19 +195,19 @@ const PricingSection = () => {
                 <p>O plano inclui:</p>
                 <ul>
                   <li>
-                    <img src="/images/v3/check.png" alt="" />
+                    <CheckIcon />
                     WhatsApp ilimitados
                   </li>
                   <li>
-                    <img src="/images/v3/check.png" alt="" />
+                    <CheckIcon />
                     Contatos ilimitados
                   </li>
                   <li>
-                    <img src="/images/v3/check.png" alt="" />
+                    <CheckIcon />
                     Suporte dedicado
                   </li>
                   <li>
-                    <img src="/images/v3/check.png" alt="" />
+                    <CheckIcon />
                     Atendentes ilimitados
                   </li>
                 </ul>

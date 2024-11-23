@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from "next/link";
 
 const PricingCard = () => {
@@ -27,23 +28,53 @@ const PricingCard = () => {
       <div className="wizebot-pricing-body">
         <ul>
           <li>
-            <img src="/images/v2/check2.png" alt="" />
+            <Image 
+              src="/images/v2/check2.png" 
+              alt="Check mark" 
+              width={24}
+              height={24}
+              style={{ width: 'auto', height: 'auto' }}
+            />
             All multimedia channels
           </li>
           <li>
-            <img src="/images/v2/check2.png" alt="" />
+            <Image 
+              src="/images/v2/check2.png" 
+              alt="Check mark" 
+              width={24}
+              height={24}
+              style={{ width: 'auto', height: 'auto' }}
+            />
             All advanced CRM features
           </li>
           <li>
-            <img src="/images/v2/check2.png" alt="" />
+            <Image 
+              src="/images/v2/check2.png" 
+              alt="Check mark" 
+              width={24}
+              height={24}
+              style={{ width: 'auto', height: 'auto' }}
+            />
             Up to 15,000 contacts
           </li>
           <li>
-            <img src="/images/v2/check2.png" alt="" />
+            <Image 
+              src="/images/v2/check2.png" 
+              alt="Check mark" 
+              width={24}
+              height={24}
+              style={{ width: 'auto', height: 'auto' }}
+            />
             Flow + AI base chatbot
           </li>
           <li>
-            <img src="/images/v2/check2.png" alt="" />
+            <Image 
+              src="/images/v2/check2.png" 
+              alt="Check mark" 
+              width={24}
+              height={24}
+              style={{ width: 'auto', height: 'auto' }}
+            />
             24/7 Support (Live, Email, Chat)
           </li>
         </ul>

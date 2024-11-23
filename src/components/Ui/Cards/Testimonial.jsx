@@ -1,5 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 
+import Image from 'next/image';
+
 const TestimonialCard = ({ title, description, avatar, name, role }) => {
   return (
     <div className="col-lg-6">
@@ -7,19 +9,19 @@ const TestimonialCard = ({ title, description, avatar, name, role }) => {
         <div className="wizebot-testimonial-rating">
           <ul>
             <li>
-              <img src="/images/icon/star-green.svg" alt="" />
+              <Image src="/images/icon/star-green.svg" alt="Star Rating" width={16} height={16} />
             </li>
             <li>
-              <img src="/images/icon/star-green.svg" alt="" />
+              <Image src="/images/icon/star-green.svg" alt="Star Rating" width={16} height={16} />
             </li>
             <li>
-              <img src="/images/icon/star-green.svg" alt="" />
+              <Image src="/images/icon/star-green.svg" alt="Star Rating" width={16} height={16} />
             </li>
             <li>
-              <img src="/images/icon/star-green.svg" alt="" />
+              <Image src="/images/icon/star-green.svg" alt="Star Rating" width={16} height={16} />
             </li>
             <li>
-              <img src="/images/icon/star-green.svg" alt="" />
+              <Image src="/images/icon/star-green.svg" alt="Star Rating" width={16} height={16} />
             </li>
           </ul>
         </div>
@@ -29,7 +31,13 @@ const TestimonialCard = ({ title, description, avatar, name, role }) => {
         </div>
         <div className="wizebot-testimonial-author">
           <div className="wizebot-testimonial-author-thumb">
-            <img src={avatar} alt="" />
+            <Image 
+              src={avatar} 
+              alt={name} 
+              width={50} 
+              height={50}
+              style={{ width: '100%', height: 'auto' }}
+            />
           </div>
           <div className="wizebot-testimonial-author-data">
             <span>{name}</span>
