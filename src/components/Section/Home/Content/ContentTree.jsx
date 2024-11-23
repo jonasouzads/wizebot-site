@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from 'next/image';
 
 const ContentSectionTree = () => {
   return (
@@ -14,13 +15,19 @@ const ContentSectionTree = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="wizebot-v2-thumb d-flex justify-content-center">
-              <motion.img 
-                src="/images/v2/thumb-v2-1.png" 
-                alt="Reescrita com IA" 
-                className="img-fluid rounded-4 shadow-lg"
+              <motion.div 
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
-              />
+              >
+                <Image 
+                  src="/images/v2/thumb-v2-1.png" 
+                  alt="Reescrita com IA" 
+                  className="img-fluid rounded-4 shadow-lg"
+                  width={600}
+                  height={400}
+                  style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
+                />
+              </motion.div>
             </div>
           </motion.div>
           <motion.div 

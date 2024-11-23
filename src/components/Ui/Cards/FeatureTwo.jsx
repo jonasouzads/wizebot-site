@@ -7,9 +7,9 @@ const FeatureCardTwo = ({ title, description, image, icon }) => {
         <Image 
           src={icon} 
           alt={title} 
-          width={48} 
-          height={48}
-          style={{ width: '100%', height: 'auto' }}
+          width={32} 
+          height={32}
+          style={{ width: '32px', height: '32px' }}
         />
       </div>
       <div className="wizebot-iconbox-data">
