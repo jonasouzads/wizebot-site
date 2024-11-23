@@ -18,11 +18,11 @@ export default function Home() {
       <HeroSection />
       <BrandSection />
       <FeatureSection />
-      <TestimonialSection />
       <ContentSectionOne />
       <ContentSectionTwo />
       <ContentSectionTree />
       <PricingSection />
+      <TestimonialSection />
       <Integrationsection />
       <CtaTwo />
       <FooterTwo />

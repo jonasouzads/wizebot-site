@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { IoClose } from "react-icons/io5";
+import OptimizedImage from '../../../common/OptimizedImage';
 
 const HeroSection = () => {
   const [popup, setPopup] = useState(false);
@@ -54,24 +55,68 @@ const HeroSection = () => {
               </button>
             </div>
             <div className="wizebot-hero-shape">
-              <img src="/images/v1/shape.png" alt="Shape" style={{ maxWidth: '100%' }} />
+              <OptimizedImage
+                src="/images/v1/shape.png"
+                alt="Shape"
+                width={600}
+                height={400}
+                priority={true}
+                className="img-fluid"
+                style={{ maxWidth: '100%' }}
+              />
             </div>
           </div>
           <div className="wizebot-hero-bottom" style={{ position: 'relative', overflow: 'hidden' }}>
             <div className="wizebot-hero-thumb wow fadeInUpX">
-              <img src="/images/v1/hero-mocup1.png" alt="Hero Mockup" style={{ maxWidth: '100%', height: 'auto' }} />
+              <OptimizedImage
+                src="/images/v1/hero-mocup1.png"
+                alt="Hero Mockup"
+                width={600}
+                height={400}
+                priority={true}
+                className="img-fluid"
+                style={{ maxWidth: '100%', height: 'auto' }}
+              />
             </div>
             <div className="wizebot-hero-card card1 wow zoomIn" style={{ maxWidth: '80px' }}>
-              <img src="/images/v1/h-card1.png" alt="Hero Card 1" style={{ width: '100%' }} />
+              <OptimizedImage
+                src="/images/v1/h-card1.png"
+                alt="Hero Card 1"
+                width={200}
+                height={150}
+                className="img-fluid"
+                style={{ width: '100%' }}
+              />
             </div>
             <div className="wizebot-hero-card card2 wow zoomIn" style={{ maxWidth: '80px' }}>
-              <img src="/images/v1/h-card2.png" alt="Hero Card 2" style={{ width: '100%' }} />
+              <OptimizedImage
+                src="/images/v1/h-card2.png"
+                alt="Hero Card 2"
+                width={200}
+                height={150}
+                className="img-fluid"
+                style={{ width: '100%' }}
+              />
             </div>
             <div className="wizebot-hero-card card3 wow zoomIn" style={{ maxWidth: '80px' }}>
-              <img src="/images/v1/h-card4.png" alt="Hero Card 3" style={{ width: '100%' }} />
+              <OptimizedImage
+                src="/images/v1/h-card4.png"
+                alt="Hero Card 3"
+                width={200}
+                height={150}
+                className="img-fluid"
+                style={{ width: '100%' }}
+              />
             </div>
             <div className="wizebot-hero-card card4 wow zoomIn" style={{ maxWidth: '80px' }}>
-              <img src="/images/v1/h-card3.png" alt="Hero Card 4" style={{ width: '100%' }} />
+              <OptimizedImage
+                src="/images/v1/h-card3.png"
+                alt="Hero Card 4"
+                width={200}
+                height={150}
+                className="img-fluid"
+                style={{ width: '100%' }}
+              />
             </div>
           </div>
         </div>
