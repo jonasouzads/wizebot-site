@@ -1,0 +1,65 @@
+[
+  {
+    "name": "n8n",
+    "category": "Automação",
+    "description": "n8n é uma plataforma de automação de fluxo de trabalho de código aberto que conecta diversas aplicações e automatiza tarefas.",
+    "link": "",
+    "icon": "/images/tools/n8n.png"
+  },
+  {
+    "name": "Make",
+    "category": "Automação",
+    "description": "Make (anteriormente Integromat) é uma plataforma de automação visual que conecta apps e serviços para criar fluxos de trabalho personalizados.",
+    "link": "",
+    "icon": "/images/tools/make.png"
+  },
+  {
+    "name": "Zapier",
+    "category": "Automação",
+    "description": "Zapier é uma ferramenta de automação online que conecta seus apps e serviços para automatizar tarefas sem necessidade de código.",
+    "link": "",
+    "icon": "/images/tools/zapier.png"
+  },
+  {
+    "name": "Webhook",
+    "category": "Automação",
+    "description": "Webhooks são mecanismos que permitem a comunicação entre sistemas ao disparar eventos automáticos em tempo real quando certos critérios são atendidos.",
+    "link": "",
+    "icon": "/images/tools/webhook.png"
+  },
+  {
+    "name": "ChatGPT",
+    "category": "IA",
+    "description": "ChatGPT é uma inteligência artificial desenvolvida pela OpenAI, capaz de compreender e gerar respostas em linguagem natural para diversas interações.",
+    "link": "",
+    "icon": "/images/tools/chatgpt.png"
+  },
+  {
+    "name": "Google Sheets",
+    "category": "Produtividade",
+    "description": "Google Sheets é uma aplicação de planilhas online que permite criar, editar e colaborar em tempo real com outros usuários.",
+    "link": "",
+    "icon": "/images/tools/sheets.png"
+  },
+  {
+    "name": "Kirvano",
+    "category": "E-commerce",
+    "description": "Kirvano é uma plataforma de vendas online, especializada em produtos digitais como cursos, ebooks e assinaturas.",
+    "link": "",
+    "icon": "/images/tools/kirvano.png"
+  },
+  {
+    "name": "Hotmart",
+    "category": "E-commerce",
+    "description": "Hotmart é uma plataforma de vendas online, especializada em produtos digitais como cursos, ebooks e assinaturas.",
+    "link": "",
+    "icon": "/images/tools/hotmart.png"
+  },
+  {
+    "name": "Kiwify",
+    "category": "E-commerce",
+    "description": "Kiwify é uma plataforma de vendas online, especializada em produtos digitais como cursos, ebooks e assinaturas.",
+    "link": "",
+    "icon": "/images/tools/kiwify.png"
+  }
+]
