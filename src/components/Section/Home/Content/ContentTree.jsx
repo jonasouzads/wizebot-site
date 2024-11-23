@@ -4,8 +4,8 @@ import Image from 'next/image';
 
 const ContentSectionTree = () => {
   return (
-    <div className="section wizebot-section-padding5">
-      <div className="container">
+    <div className="section wizebot-section-padding5 overflow-hidden">
+      <div className="container position-relative">
         <div className="row align-items-center">
           <motion.div 
             className="col-lg-5"

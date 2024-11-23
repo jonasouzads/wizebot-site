@@ -26,9 +26,9 @@ const ContentSectionOne = () => {
   }, []);
 
   return (
-    <div className="section wizebot-section-padding2">
+    <div className="section wizebot-section-padding2 overflow-hidden">
       <div id="wizebot-counter"></div>
-      <div className="container">
+      <div className="container position-relative">
         <div className="row align-items-center justify-content-center">
           <motion.div 
             className="col-lg-5 text-center mb-4 mb-lg-0"
