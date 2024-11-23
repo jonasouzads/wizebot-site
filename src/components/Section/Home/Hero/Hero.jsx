@@ -60,15 +60,21 @@ const HeroSection = () => {
                 Veja como é Fácil
               </button>
             </div>
-            <div className="wizebot-hero-shape">
+            <div className="wizebot-hero-shape" style={{ position: 'relative' }}>
               <Image
                 src="/images/v1/shape.png"
                 alt="Shape"
-                width={600}
-                height={400}
+                width={200}
+                height={100}
                 priority={true}
                 className="img-fluid"
-                style={{ maxWidth: '100%' }}
+                style={{
+                  maxWidth: '100%',
+                  position: 'absolute',
+                  left: '10px',  
+                  top: '10%',
+                  transform: 'translateY(-50%)',
+                }}
               />
             </div>
           </div>
@@ -82,42 +88,6 @@ const HeroSection = () => {
                 priority={true}
                 className="img-fluid"
                 style={{ maxWidth: '100%', height: 'auto' }}
-              />
-            </div>
-            <div className="wizebot-hero-card card1 wow zoomIn" style={{ maxWidth: '80px' }}>
-              <Image
-                src="/images/v1/h-card1.png"
-                alt="Hero Card 1"
-                width={80}
-                height={80}
-                style={{ width: '100%', height: 'auto' }}
-              />
-            </div>
-            <div className="wizebot-hero-card card2 wow zoomIn" style={{ maxWidth: '80px' }}>
-              <Image
-                src="/images/v1/h-card2.png"
-                alt="Hero Card 2"
-                width={80}
-                height={80}
-                style={{ width: '100%', height: 'auto' }}
-              />
-            </div>
-            <div className="wizebot-hero-card card3 wow zoomIn" style={{ maxWidth: '80px' }}>
-              <Image
-                src="/images/v1/h-card4.png"
-                alt="Hero Card 3"
-                width={80}
-                height={80}
-                style={{ width: '100%', height: 'auto' }}
-              />
-            </div>
-            <div className="wizebot-hero-card card4 wow zoomIn" style={{ maxWidth: '80px' }}>
-              <Image
-                src="/images/v1/h-card3.png"
-                alt="Hero Card 4"
-                width={80}
-                height={80}
-                style={{ width: '100%', height: 'auto' }}
               />
             </div>
           </div>
