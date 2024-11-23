@@ -204,9 +204,9 @@ const PricingSectionTwo = () => {
                 </tr>
                 <tr>
                   <td>WA+</td>
-                  <td>R$ 47</td>
-                  <td>R$ 67</td>
-                  <td>R$ 97</td>
+                  <td><span style={{ fontSize: '1rem' }}>R$</span> 47</td>
+                  <td><span style={{ fontSize: '1rem' }}>R$</span> 67</td>
+                  <td><span style={{ fontSize: '1rem' }}>R$</span> 97</td>
                 </tr>
                 <tr>
                   <td></td>

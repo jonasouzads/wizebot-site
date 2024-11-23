@@ -5,6 +5,7 @@ import BrandSection from "~/components/Section/Home/Brand/Brand";
 import ContentSectionOne from "~/components/Section/Home/Content/ContentOne";
 import ContentSectionTwo from "~/components/Section/Home/Content/ContentTwo";
 import ContentSectionTree from "~/components/Section/Home/Content/ContentTree";
+import ContentSectionFor from "~/components/Section/Home/Content/ContentFor";
 import FeatureSection from "~/components/Section/Home/Feature/Feature";
 import HeroSection from "~/components/Section/Home/Hero/Hero";
 import PricingSection from "~/components/Section/Home/Pricing/Pricing";
@@ -21,6 +22,7 @@ export default function Home() {
       <ContentSectionOne />
       <ContentSectionTwo />
       <ContentSectionTree />
+      <ContentSectionFor />
       <PricingSection />
       <TestimonialSection />
       <Integrationsection />

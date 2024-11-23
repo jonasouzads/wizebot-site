@@ -20,7 +20,7 @@ const ContentSectionTree = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <Image 
-                  src="/images/v2/thumb-v2-1.png" 
+                  src="/images/v2/thumb-v2-3.gif" 
                   alt="Reescrita com IA" 
                   className="img-fluid rounded-4 shadow-lg"
                   width={600}
@@ -31,13 +31,13 @@ const ContentSectionTree = () => {
             </div>
           </motion.div>
           <motion.div 
-            className="col-lg-7 d-flex align-items-center"
+            className="col-lg-7"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="wizebot-default-content">
+            <div className="wizebot-default-content ps-lg-4">
               <h2>Reescreva<br/>com IA</h2>
               <p>
                 Evite erros e garanta uma comunicação profissional com seus clientes. 

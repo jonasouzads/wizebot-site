@@ -81,7 +81,7 @@ const HeroSection = () => {
           <div className="wizebot-hero-bottom" style={{ position: 'relative', overflow: 'hidden' }}>
             <div className="wizebot-hero-thumb wow fadeInUpX">
               <Image
-                src="/images/v1/hero-mocup1.png"
+                src="/images/v1/hero-mocup2.gif"
                 alt="Hero Mockup"
                 width={600}
                 height={400}

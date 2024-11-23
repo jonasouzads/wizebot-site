@@ -20,7 +20,7 @@ const ContentSectionTwo = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <Image 
-                  src="/images/v2/thumb-v2-2.png" 
+                  src="/images/v2/thumb-v2-2.gif" 
                   alt="Carrossel de Produtos no WhatsApp" 
                   className="img-fluid rounded-4 shadow-lg"
                   width={600}

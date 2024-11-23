@@ -53,7 +53,7 @@ const PricingSection = () => {
                 <h5>Básico</h5>
               </div>
               <div className="wizebot-pricing-price">
-                <h2>R$</h2>
+                <h2 style={{ fontSize: '1.5rem' }}>R$</h2>
                 <div className="wizebot-price dynamic-value">
                   {isMonthly ? 97 : 932}
                 </div>
@@ -96,7 +96,7 @@ const PricingSection = () => {
                 <h5>Pro</h5>
               </div>
               <div className="wizebot-pricing-price">
-                <h2>R$</h2>
+                <h2 style={{ fontSize: '1.5rem' }}>R$</h2>
                 <div className="wizebot-price dynamic-value">
                   {isMonthly ? 197 : 1892}
                 </div>
@@ -139,7 +139,7 @@ const PricingSection = () => {
                 <h5>Elite</h5>
               </div>
               <div className="wizebot-pricing-price">
-                <h2>R$</h2>
+                <h2 style={{ fontSize: '1.5rem' }}>R$</h2>
                 <div className="wizebot-price dynamic-value">
                   {isMonthly ? 397 : 3812}
                 </div>
@@ -182,7 +182,7 @@ const PricingSection = () => {
                 <h5>Enterprise</h5>
               </div>
               <div className="wizebot-pricing-price">
-                <h2>R$</h2>
+                <h2 style={{ fontSize: '1.5rem' }}>R$</h2>
                 <div className="wizebot-price">
                   
                 </div>
