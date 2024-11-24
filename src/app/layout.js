@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react"
 import "~/assets/css/bootstrap.min.css";
 import "~/assets/css/app.css";
 import "~/assets/css/main.css";
