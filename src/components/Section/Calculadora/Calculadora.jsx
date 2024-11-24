@@ -302,7 +302,7 @@ const Calculadora = () => {
               <p className="mb-0">
                 Os preços indicados estão sujeitos a alterações em Meta. Consulte a página
                 <Link 
-                  href="https://www.meta.com"
+                  href="https://developers.facebook.com/docs/whatsapp/pricing?locale=pt_BR"
                   className="mx-2 text-warning fw-bold text-decoration-underline"
                 >
                   Meta

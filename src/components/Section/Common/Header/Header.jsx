@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { FaAngleDown, FaAngleLeft } from "react-icons/fa";
 import BrandLogo from "~/components/Ui/Logo/BrandLogo";
 
-const Header = ({ logoSrc }) => {
+const Header = ({ logoSrc, roundedBtn }) => {
   const [isActive, setIsActive] = useState(false);
   const [subMenuArray, setSubMenuArray] = useState([]);
   const [subMenuTextArray, setSubMenuTextArray] = useState([]);
@@ -140,8 +140,8 @@ const Header = ({ logoSrc }) => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="/pricing" className="nav-link-item">
-                    Preços
+                  <Link href="/planos" className="nav-link-item">
+                    Planos
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -158,12 +158,12 @@ const Header = ({ logoSrc }) => {
                   </Link>
                   <ul className="sub-menu" id="submenu-2">
                     <li className="sub-menu--item">
-                      <Link href="https://api.whatsapp.com/send?phone=5511999999999" target="_blank">
+                      <Link href="https://api.whatsapp.com/send?phone=559192226534" target="_blank">
                         <span className="menu-item-text">Suporte via WhatsApp</span>
                       </Link>
                     </li>
                     <li className="sub-menu--item">
-                      <Link href="/calculadora">
+                      <Link href="/custo-por-mensagens">
                         <span className="menu-item-text">Calculadora de Custos</span>
                       </Link>
                     </li>
@@ -190,12 +190,21 @@ const Header = ({ logoSrc }) => {
 
           <div className="header-btn header-btn-l1 ms-auto d-none d-xs-inline-flex">
             <div className="wizebot-header-btn-wrap">
-              <Link className="wizebot-login-btn" href="https://app.wizebot.com.br/login" target="_blank">
+              <Link 
+                className="wizebot-login-btn" 
+                href="https://app.wizebot.com.br/login" 
+                target="_blank"
+                style={{ color: '#132538' }}
+              >
                 Login
               </Link>
             </div>
             <Link
-              className="wizebot-default-btn wizebot-header-btn"
+              className={`${
+                roundedBtn
+                  ? "wizebot-default-btn wizebot-header-btn pill"
+                  : "wizebot-default-btn wizebot-header-btn"
+              }`}
               href="/pricing"
             >
               <span>Comece Agora</span>

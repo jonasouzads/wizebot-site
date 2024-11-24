@@ -60,9 +60,9 @@ const FooterTwo = () => {
                   <p>Institucional</p>
                 </div>
                 <ul>
-                  <li><Link href="/politicas-privacidade">Políticas de Privacidade</Link></li>
-                  <li><Link href="/termos-uso">Termos de Uso</Link></li>
-                  <li><Link href="/politicas-reembolso">Políticas de Reembolso</Link></li>
+                  <li><Link href="/politicas-de-privacidade">Políticas de Privacidade</Link></li>
+                  <li><Link href="/termos-de-uso">Termos de Uso</Link></li>
+                  <li><Link href="/politicas-de-reembolso">Políticas de Reembolso</Link></li>
                 </ul>
               </div>
             </div>

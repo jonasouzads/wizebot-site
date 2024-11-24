@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from 'next/image';
 
-const IntegrationCard = ({ icon, name, category, description, link }) => {
+const integrationsCard = ({ icon, name, category, description, link }) => {
   return (
     <div className="col-xl-4 col-md-6">
       <div className="wizebot-iconbox-wrap-left d-block iconbox-left-border">
@@ -10,26 +10,30 @@ const IntegrationCard = ({ icon, name, category, description, link }) => {
             <Image 
               src={icon} 
               alt={name} 
-              width={48} 
-              height={48}
-              style={{ width: '100%', height: 'auto' }}
+              width={40} 
+              height={40} 
             />
           </div>
-          <div className="wizebot-iconbox-header-data">
+          <div className="wizebot-iconbox-header-content">
             <h4>{name}</h4>
-            <p>{category}</p>
+            <span>{category}</span>
           </div>
         </div>
-        <div className="wizebot-iconbox-data">
+        <div className="wizebot-iconbox-content">
           <p>{description}</p>
-          <Link className="wizebot-iconbox-btn" href={link || ""}>
-            <span>Saber mais</span>
-            <Image 
-              src="/images/icon/arrow-right2.svg" 
-              alt="Arrow Right" 
-              width={16} 
-              height={16}
-            />
+        </div>
+        <div className="wizebot-iconbox-btn">
+          <Link href={link} target="_blank">
+            <span>Ver Mais Integrações</span>
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M10.4767 6.16664L6.00668 1.69664L7.18501 0.518311L13.6667 6.99998L7.18501 13.4816L6.00668 12.3033L10.4767 7.83331H0.333344V6.16664H10.4767Z"></path>
+            </svg>
           </Link>
         </div>
       </div>
@@ -37,4 +41,4 @@ const IntegrationCard = ({ icon, name, category, description, link }) => {
   );
 };
 
-export default IntegrationCard;
+export default integrationsCard;

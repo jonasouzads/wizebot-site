@@ -8,7 +8,7 @@ import { useState } from "react";
 import { IoClose } from "react-icons/io5";
 import ReactPlayer from "react-player";
 
-const IntegrationsectionTwo = () => {
+const IntegrationSectionTwo = () => {
   const [popup, setPopup] = useState(false);
 
   const openPopup = () => {
@@ -35,12 +35,12 @@ const IntegrationsectionTwo = () => {
           <div className="wizebot-section-title wizebot-two-column-title">
             <div className="row">
               <div className="col-lg-8">
-                <h2>Integration with dozens of tools</h2>
+                <h2>integration with dozens of tools</h2>
               </div>
               <div className="col-lg-4 d-flex align-items-center">
                 <div className="wizebot-title-btn">
-                  <Link className="wizebot-default-btn pill" href="Integrations">
-                    <span>Browse all Integrations</span>
+                  <Link className="wizebot-default-btn pill" href="integrations">
+                    <span>Browse all integrations</span>
                   </Link>
                 </div>
               </div>
@@ -148,4 +148,4 @@ const IntegrationsectionTwo = () => {
   );
 };
 
-export default IntegrationsectionTwo;
+export default IntegrationSectionTwo;

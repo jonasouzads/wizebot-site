@@ -55,7 +55,7 @@ const PricingSection = () => {
               <div className="wizebot-pricing-price">
                 <h2 style={{ fontSize: '1.5rem' }}>R$</h2>
                 <div className="wizebot-price dynamic-value">
-                  {isMonthly ? 97 : 932}
+                  {isMonthly ? 147 : 1227}
                 </div>
                 <p className="dynamic-value">
                   /{isMonthly ? "Mensal" : "Anual"}
@@ -69,7 +69,7 @@ const PricingSection = () => {
                 <ul>
                   <li>
                     <CheckIcon />
-                    1 número de WhatsApp conectado
+                    1 Número de WhatsApp
                   </li>
                   <li>
                     <CheckIcon />
@@ -85,7 +85,11 @@ const PricingSection = () => {
                   </li>
                 </ul>
               </div>
-              <Link className="wizebot-pricing-btn" href="contact-us">
+              <Link 
+                className="wizebot-pricing-btn" 
+                href={isMonthly ? "https://pay.kirvano.com/2c26ab1f-07a5-40a2-91b6-fb46a0ba11de?utm_source=site&utm_medium=wizebot&utm_campaign=planos" : "https://pay.kirvano.com/9d64ebad-4768-43b8-b69d-5d011d8e8461?utm_source=site&utm_medium=wizebot&utm_campaign=planos"}
+                target="_blank"
+              >
                 Começar agora
               </Link>
             </div>
@@ -98,7 +102,7 @@ const PricingSection = () => {
               <div className="wizebot-pricing-price">
                 <h2 style={{ fontSize: '1.5rem' }}>R$</h2>
                 <div className="wizebot-price dynamic-value">
-                  {isMonthly ? 197 : 1892}
+                  {isMonthly ? 197 : 1657}
                 </div>
                 <p className="dynamic-value">
                   /{isMonthly ? "Mensal" : "Anual"}
@@ -112,7 +116,7 @@ const PricingSection = () => {
                 <ul>
                   <li>
                     <CheckIcon />
-                    2 números de WhatsApp
+                    1 Número de WhatsApp
                   </li>
                   <li>
                     <CheckIcon />
@@ -128,7 +132,11 @@ const PricingSection = () => {
                   </li>
                 </ul>
               </div>
-              <Link className="wizebot-pricing-btn active" href="contact-us">
+              <Link 
+                className="wizebot-pricing-btn active" 
+                href={isMonthly ? "https://pay.kirvano.com/9aad9d90-e17a-4c01-93e7-09e30ba5a779?utm_source=site&utm_medium=wizebot&utm_campaign=planos" : "https://pay.kirvano.com/b0b7eb70-7fe2-4071-bf9f-04b3521d0059?utm_source=site&utm_medium=wizebot&utm_campaign=planos"}
+                target="_blank"
+              >
                 Começar agora
               </Link>
             </div>
@@ -141,7 +149,7 @@ const PricingSection = () => {
               <div className="wizebot-pricing-price">
                 <h2 style={{ fontSize: '1.5rem' }}>R$</h2>
                 <div className="wizebot-price dynamic-value">
-                  {isMonthly ? 397 : 3812}
+                  {isMonthly ? 397 : 3334}
                 </div>
                 <p className="dynamic-value">
                   /{isMonthly ? "Mensal" : "Anual"}
@@ -155,7 +163,7 @@ const PricingSection = () => {
                 <ul>
                   <li>
                     <CheckIcon />
-                    5 números de WhatsApp
+                    1 Número de WhatsApp
                   </li>
                   <li>
                     <CheckIcon />
@@ -171,7 +179,11 @@ const PricingSection = () => {
                   </li>
                 </ul>
               </div>
-              <Link className="wizebot-pricing-btn" href="contact-us">
+              <Link 
+                className="wizebot-pricing-btn" 
+                href={isMonthly ? "https://pay.kirvano.com/c22a2961-3727-4172-84b2-a7d671b086f8?utm_source=site&utm_medium=wizebot&utm_campaign=planos" : "https://pay.kirvano.com/9d235e58-9ba7-4483-8572-eb05bd70c593?utm_source=site&utm_medium=wizebot&utm_campaign=planos"}
+                target="_blank"
+              >
                 Começar agora
               </Link>
             </div>
@@ -179,7 +191,7 @@ const PricingSection = () => {
           <div className="col-xl-3 col-md-6">
             <div className="wizebot-pricing-wrap">
               <div className="wizebot-pricing-header">
-                <h5>Enterprise</h5>
+                <h5>Agência</h5>
               </div>
               <div className="wizebot-pricing-price">
                 <h2 style={{ fontSize: '1.5rem' }}>R$</h2>

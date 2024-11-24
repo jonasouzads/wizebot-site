@@ -1,6 +1,6 @@
 import CtaTwo from "~/components/Section/Common/Cta-2/CtaTwo";
 import FooterTwo from "~/components/Section/Common/Footer/FooterTwo";
-import Integrationsection from "~/components/Section/Common/Integration/Integration";
+import integrationsection from "~/components/Section/Common/Integrations/Integracoes";
 import BrandSection from "~/components/Section/Home/Brand/Brand";
 import ContentSectionOne from "~/components/Section/Home/Content/ContentOne";
 import ContentSectionTwo from "~/components/Section/Home/Content/ContentTwo";
@@ -22,7 +22,7 @@ export default function HomeTwoPage() {
       <ContentSectionTwo />
       <PricingSection />
       <TestimonialSection />
-      <Integrationsection />
+      <integrationsection />
       <CtaTwo />
       <FooterTwo />
     </>

@@ -160,8 +160,8 @@ const HomeHeader = ({ logoSrc, roundedBtn }) => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="/pricing" className="nav-link-item">
-                    Preços
+                  <Link href="/planos" className="nav-link-item">
+                    Planos
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -178,12 +178,12 @@ const HomeHeader = ({ logoSrc, roundedBtn }) => {
                   </Link>
                   <ul className="sub-menu" id="submenu-2">
                     <li className="sub-menu--item">
-                      <Link href="https://api.whatsapp.com/send?phone=5511999999999" target="_blank">
+                      <Link href="https://api.whatsapp.com/send?phone=559192226534" target="_blank">
                         <span className="menu-item-text">Suporte via WhatsApp</span>
                       </Link>
                     </li>
                     <li className="sub-menu--item">
-                      <Link href="/calculadora">
+                      <Link href="/custo-por-mensagens">
                         <span className="menu-item-text">Calculadora de Custos</span>
                       </Link>
                     </li>

@@ -24,6 +24,14 @@ const HeroSection = () => {
     }
   };
 
+  const scrollToStart = (e) => {
+    e.preventDefault();
+    const element = document.getElementById('start-free');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <div
@@ -36,16 +44,16 @@ const HeroSection = () => {
       >
         <div className="container" style={{ overflow: 'hidden' }}>
           <div className="wizebot-hero-content center position-relative">
-            <h1>Seu WhatsApp uma Fonte Automática de Vendas</h1>
+            <h1>Seu WhatsApp uma Fonte Automática de Vendas💰</h1>
             <p>
               Use a API oficial do WhatsApp com a Wizebot e evite banimentos.
-              Aproveite os menores custos e 0% de taxa adicional na API do Meta,
+              Aproveite os menores custos e 🤑 0% de taxa adicional na API do Meta,
               ao contrário de outros que cobram de 20 a 25% a mais.
             </p>
             <div className="wizebot-hero-btn-wrap center">
-              <Link className="wizebot-default-btn" href="contact-us">
+              <a className="wizebot-default-btn" href="#start-free" onClick={scrollToStart}>
                 <span>Comece Gratuitamente</span>
-              </Link>
+              </a>
               <button
                 className="video-init wizebot-hero-video"
                 onClick={openPopup}

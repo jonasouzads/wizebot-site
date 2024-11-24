@@ -1,5 +1,3 @@
-
-
 /*Header Css StaRT*/
 .site-navbar {
   display: flex;
@@ -1011,3 +1009,208 @@ a.log-in-btn:hover:after {
   background-color: #fff;
 }
 
+/* Formulário horizontal na seção CTA */
+.wizebot-subscribe-two {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wizebot-form-horizontal {
+  display: flex;
+  gap: 15px;
+  align-items: stretch;
+  max-width: 100%;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.phone-input-container {
+  position: relative;
+  flex: 2;
+}
+
+.phone-input-container input {
+  width: 100%;
+  padding-right: 120px !important;
+}
+
+.phone-input-container button {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  height: 50px;
+  min-width: 100px;
+  padding: 0 15px;
+}
+
+.wizebot-form-horizontal input {
+  flex: 1;
+  min-width: 150px;
+  height: 60px;
+  padding: 0 25px;
+  border: none;
+  border-radius: 30px;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.wizebot-form-horizontal input::placeholder {
+  color: #666;
+}
+
+.wizebot-form-horizontal input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.wizebot-cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  .wizebot-form-horizontal {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .phone-input-container {
+    flex: 1;
+  }
+
+  .phone-input-container input {
+    padding-right: 25px !important;
+  }
+
+  .phone-input-container button {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: 10px;
+    height: 60px;
+  }
+}
+
+.error-message {
+  color: #dc3545;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.wizebot-form-horizontal input:disabled,
+.wizebot-form-horizontal button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.form-feedback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+}
+
+.redirect-countdown {
+  color: #0056b3;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .form-feedback {
+    padding: 15px;
+  }
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+}
+
+.wizebot-form-horizontal {
+  display: flex;
+  gap: 15px;
+  align-items: stretch;
+  max-width: 100%;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.form-feedback {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 14px;
+  margin: 0;
+  flex: 1;
+}
+
+.wizebot-login-btn {
+  display: inline-block;
+  padding: 8px 25px;
+  background-color: #fff;
+  color: #333;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  min-width: 120px;
+  text-align: center;
+}
+
+.wizebot-login-btn:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .form-feedback {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .error-message {
+    text-align: center;
+  }
+
+  .wizebot-login-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}

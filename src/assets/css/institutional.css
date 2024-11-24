@@ -1,0 +1,143 @@
+/* Common styles for institutional pages */
+.wizebot-privacy-policy,
+.wizebot-terms,
+.wizebot-refund {
+  background: var(--white-bg);
+  color: var(--body-color);
+  padding-top: 200px;
+  padding-bottom: 140px;
+}
+
+.policy-content,
+.terms-content,
+.refund-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.policy-content h2,
+.terms-content h2,
+.refund-content h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 50px;
+  color: var(--heading-color);
+  text-align: center;
+}
+
+.policy-content section,
+.terms-content section,
+.refund-content section {
+  margin-bottom: 60px;
+}
+
+.policy-content h3,
+.terms-content h3,
+.refund-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: var(--heading-color);
+}
+
+.policy-content h4,
+.terms-content h4,
+.refund-content h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--heading-color);
+  margin-top: 30px;
+}
+
+.policy-content p,
+.terms-content p,
+.refund-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.policy-content ul,
+.terms-content ul,
+.refund-content ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 25px;
+}
+
+.policy-content li,
+.terms-content li,
+.refund-content li {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .wizebot-privacy-policy,
+  .wizebot-terms,
+  .wizebot-refund {
+    padding-top: 180px;
+    padding-bottom: 120px;
+  }
+
+  .policy-content h2,
+  .terms-content h2,
+  .refund-content h2 {
+    font-size: 22px;
+    margin-bottom: 40px;
+  }
+
+  .policy-content section,
+  .terms-content section,
+  .refund-content section {
+    margin-bottom: 50px;
+  }
+
+  .policy-content h3,
+  .terms-content h3,
+  .refund-content h3 {
+    font-size: 17px;
+    margin-bottom: 25px;
+  }
+
+  .policy-content h4,
+  .terms-content h4,
+  .refund-content h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wizebot-privacy-policy,
+  .wizebot-terms,
+  .wizebot-refund {
+    padding-top: 160px;
+    padding-bottom: 100px;
+  }
+
+  .policy-content h2,
+  .terms-content h2,
+  .refund-content h2 {
+    font-size: 20px;
+    margin-bottom: 35px;
+  }
+
+  .policy-content section,
+  .terms-content section,
+  .refund-content section {
+    margin-bottom: 40px;
+  }
+
+  .policy-content h3,
+  .terms-content h3,
+  .refund-content h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+}

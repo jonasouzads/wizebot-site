@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const Integrationsection = () => {
+const integrationsection = () => {
   return (
     <div className="section wizebot-section-padding">
       <div className="container">
@@ -13,8 +13,8 @@ const Integrationsection = () => {
             </div>
             <div className="col-lg-4 d-flex align-items-center">
               <div className="wizebot-title-btn">
-                <Link className="wizebot-default-btn pill" href="Integrations">
-                  <span>Ver mais Integrations</span>
+                <Link className="wizebot-default-btn pill" href="integrations">
+                  <span>Ver mais integrações</span>
                 </Link>
               </div>
             </div>
@@ -123,4 +123,4 @@ const Integrationsection = () => {
   );
 };
 
-export default Integrationsection;
+export default integrationsection;

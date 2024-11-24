@@ -31,7 +31,7 @@ const FeatureSection = () => {
             />
             <FeatureCardTwo
               icon="/images/v2/icon-v2-4.png"
-              title="Integrations"
+              title="integrations"
               description="Conecte-se com Hotmart, Kiwify, WooCommerce e Shopify em um único lugar."
               image="/images/v2/card-v2-4.png"
             />
