@@ -44,7 +44,7 @@ const HeroSection = () => {
       >
         <div className="container" style={{ overflow: 'hidden' }}>
           <div className="wizebot-hero-content center position-relative">
-            <h1>Automatize Seu Atendimento com o WhatsApp Oficial🚀</h1>
+            <h1>Seu WhatsApp uma Fonte Automática de Vendas!</h1>
             <p>
               Use a API oficial do WhatsApp com a Wizebot e evite banimentos.
               Aproveite os menores custos e 🤑 0% de taxa adicional na API do Meta,
