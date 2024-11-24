@@ -24,10 +24,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>
+      <head>
+        <Analytics />
+      </head>
+      <body className={inter.className} style={{ scrollBehavior: 'smooth' }}>
         {children}
         <WhatsAppButton />
-        <Analytics />
       </body>
     </html>
   );

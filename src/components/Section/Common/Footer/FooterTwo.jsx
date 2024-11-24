@@ -72,9 +72,9 @@ const FooterTwo = () => {
                   <p>Recursos</p>
                 </div>
                 <ul>
-                  <li><Link href="/ajuda">Centro de Ajuda</Link></li>
-                  <li><Link href="/suporte">Suporte via WhatsApp</Link></li>
-                  <li><Link href="/calculadora">Calculadora de Custos</Link></li>
+                  <li><Link href="/https://help.wizebot.com.br/">Centro de Ajuda</Link></li>
+                  <li><Link href="/https://wa.me/559192226534">Suporte via WhatsApp</Link></li>
+                  <li><Link href="/custo-por-mensagens">Calculadora de Custos</Link></li>
                   <li><Link href="/gerador-links">Gerador de Links para WhatsApp</Link></li>
                   <li><Link href="/faq">FAQ</Link></li>
                 </ul>

@@ -12,7 +12,7 @@ const CtaThree = ({ title, btnText }) => {
           </div>
           <div className="col-lg-5 d-flex align-items-center">
             <div className="wizebot-title-btn">
-              <Link className="wizebot-default-btn" href="single-team">
+              <Link className="wizebot-default-btn" href="https://wa.me/559192226534">
                 <span>{btnText}</span>
               </Link>
             </div>

@@ -28,13 +28,10 @@ const HomeHeader = ({ logoSrc, roundedBtn }) => {
 
   const menuMainClickHandler = (e) => {
     if (typeof window !== "undefined" && window.innerWidth <= 991) {
-      document.querySelectorAll(".nav-item").forEach((item) => {
-        item.classList.remove("active");
-      });
-
       const hasChildren = e.target.closest(".nav-item-has-children");
       if (hasChildren) {
         e.preventDefault();
+        hasChildren.classList.toggle("active");
         if (hasChildren.classList.contains("nav-item-has-children")) {
           showSubMenu(hasChildren);
         }
@@ -97,15 +94,15 @@ const HomeHeader = ({ logoSrc, roundedBtn }) => {
 
   const showSubMenu = (hasChildren) => {
     const submenuAll = document.querySelectorAll(".sub-menu");
-    submenuAll.forEach((submenu) => submenu.classList.remove());
+    submenuAll.forEach((submenu) => {
+      submenu.classList.remove("active");
+      submenu.style.animation = "";
+    });
     const subMenu = hasChildren.querySelector(".sub-menu");
     setSubMenuArray([...subMenuArray, subMenu.id]);
     subMenu.classList.add("active");
-    subMenu.style.animation = "slideLeft 0.5s ease forwards";
     const menuTitle = hasChildren.querySelector(".drop-trigger").textContent;
     setSubMenuTextArray([...subMenuTextArray, menuTitle]);
-    document.querySelector(".current-menu-title").innerHTML = menuTitle;
-    document.querySelector(".mobile-menu-head").classList.add("active");
   };
 
   useEffect(() => {
