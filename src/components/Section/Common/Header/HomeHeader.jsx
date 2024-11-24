@@ -220,7 +220,7 @@ const HomeHeader = ({ logoSrc, roundedBtn }) => {
                   ? "wizebot-default-btn wizebot-header-btn pill"
                   : "wizebot-default-btn wizebot-header-btn"
               }`}
-              href="pricing"
+              href="planos"
             >
               <span>Comece Agora</span>
             </Link>

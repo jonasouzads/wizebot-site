@@ -13,7 +13,7 @@ const integrationsection = () => {
             </div>
             <div className="col-lg-4 d-flex align-items-center">
               <div className="wizebot-title-btn">
-                <Link className="wizebot-default-btn pill" href="integrations">
+                <Link className="wizebot-default-btn pill" href="integracoes">
                   <span>Ver mais integrações</span>
                 </Link>
               </div>
