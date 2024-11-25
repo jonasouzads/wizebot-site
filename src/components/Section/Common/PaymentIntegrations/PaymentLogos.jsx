@@ -10,9 +10,17 @@ const LogoItem = memo(({ logo, index }) => (
       alt={`Payment Integration ${index + 1}`}
       width={100}
       height={40}
-      loading="lazy"
-      quality={75}
-      style={{ objectFit: 'contain', width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '40px' }}
+      loading={index < 3 ? "eager" : "lazy"}
+      priority={index < 3}
+      quality={60}
+      style={{ 
+        objectFit: 'contain', 
+        width: 'auto', 
+        height: 'auto', 
+        maxWidth: '100%', 
+        maxHeight: '40px',
+        willChange: 'transform'
+      }}
     />
   </div>
 ));
@@ -20,6 +28,7 @@ const LogoItem = memo(({ logo, index }) => (
 LogoItem.displayName = 'LogoItem';
 
 const PaymentLogos = memo(function PaymentLogos() {
+  // Reduzido número de logos por linha para melhor performance
   const logos = useMemo(() => ({
     row1: [
       '/images/payment/logo (1).png',
@@ -28,41 +37,29 @@ const PaymentLogos = memo(function PaymentLogos() {
       '/images/payment/logo (4).png',
       '/images/payment/logo (5).png',
       '/images/payment/logo (6).png',
+    ],
+    row2: [
       '/images/payment/logo (7).png',
       '/images/payment/logo (8).png',
       '/images/payment/logo (9).png',
       '/images/payment/logo (10).png',
-    ],
-    row2: [
       '/images/payment/logo (11).png',
       '/images/payment/logo (12).png',
+    ],
+    row3: [
       '/images/payment/logo (13).png',
       '/images/payment/logo (14).png',
       '/images/payment/logo (15).png',
       '/images/payment/logo (16).png',
       '/images/payment/logo (17).png',
       '/images/payment/logo (18).png',
-      '/images/payment/logo (19).png',
-      '/images/payment/logo (20).png',
-    ],
-    row3: [
-      '/images/payment/logo (21).png',
-      '/images/payment/logo (22).png',
-      '/images/payment/logo (23).png',
-      '/images/payment/logo (24).png',
-      '/images/payment/logo (25).png',
-      '/images/payment/logo (26).png',
-      '/images/payment/logo (27).png',
-      '/images/payment/logo (28).png',
-      '/images/payment/logo (29).png',
-      '/images/payment/logo (30).png',
     ],
   }), []);
 
   const renderLogoRow = useCallback((rowKey, rowLogos, rowIndex) => (
     <div key={rowKey} className={`logo-row ${rowIndex % 2 === 0 ? 'slide-right' : 'slide-left'}`}>
       <div className="logo-track">
-        {[...rowLogos].map((logo, index) => (
+        {[...rowLogos, ...rowLogos].map((logo, index) => (
           <LogoItem
             key={`${rowKey}-${index}`}
             logo={logo}
@@ -84,26 +81,33 @@ const PaymentLogos = memo(function PaymentLogos() {
           position: relative;
           max-width: 1200px;
           margin: 0 auto;
+          contain: content;
         }
         .logo-row {
           margin-bottom: 30px;
           overflow: hidden;
+          contain: content;
         }
         .logo-track {
           display: flex;
           gap: 40px;
-          animation: slide 30s linear infinite;
+          animation: slide 40s linear infinite;
           align-items: center;
+          contain: layout style paint;
+          transform: translateZ(0);
+          will-change: transform;
         }
         .slide-right .logo-track {
           animation-direction: normal;
+          animation-play-state: running;
         }
         .slide-left .logo-track {
           animation-direction: reverse;
+          animation-play-state: running;
         }
         @keyframes slide {
           from { transform: translateX(0); }
-          to { transform: translateX(-100%); }
+          to { transform: translateX(-50%); }
         }
         :global(.logo-item) {
           flex: 0 0 auto;
@@ -113,6 +117,7 @@ const PaymentLogos = memo(function PaymentLogos() {
           padding: 0 10px;
           min-width: 120px;
           height: 50px;
+          contain: layout style;
         }
         @media (max-width: 768px) {
           .logo-track {
@@ -122,6 +127,12 @@ const PaymentLogos = memo(function PaymentLogos() {
             min-width: 100px;
             height: 40px;
             padding: 0 5px;
+          }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .logo-track {
+            animation: none;
+            gap: 30px;
           }
         }
       `}</style>
