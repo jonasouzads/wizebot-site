@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useCallback, memo } from "react";
+import { useEffect, useState } from "react";
 import CountUp from "react-countup";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -7,37 +7,22 @@ import Image from "next/image";
 const ContentSectionOne = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  const handleScroll = useCallback(() => {
-    const section = document.getElementById("wizebot-counter");
-    if (section) {
-      const rect = section.getBoundingClientRect();
-      const isVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
-      setIsVisible(isVisible);
-    }
-  }, []);
-
   useEffect(() => {
-    const options = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
+    const handleScroll = () => {
+      const section = document.getElementById("wizebot-counter");
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        const isVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
+        setIsVisible(isVisible);
+      }
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      });
-    }, options);
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
 
-    const section = document.getElementById("wizebot-counter");
-    if (section) {
-      observer.observe(section);
-    }
-
-    return () => observer.disconnect();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
@@ -65,7 +50,6 @@ const ContentSectionOne = () => {
                   className="img-fluid rounded-4 shadow-lg"
                   style={{ width: '100%', height: 'auto' }}
                   priority
-                  loading="eager"
                 />
               </motion.div>
             </div>
@@ -89,7 +73,7 @@ const ContentSectionOne = () => {
                 <div className="text-start">
                   <h3 className="fs-3 mb-1" style={{ fontSize: '120%' }}>
                     <span className="wizebot-counter fw-bold">
-                      {isVisible ? <CountUp end={99} duration={2} /> : 99}
+                      {isVisible ? <CountUp end={99} duration={2.5} /> : 99}
                     </span>
                     %
                   </h3>
@@ -98,7 +82,7 @@ const ContentSectionOne = () => {
                 <div className="text-start">
                   <h3 className="fs-3 mb-1" style={{ fontSize: '120%' }}>
                     <span className="wizebot-counter fw-bold">
-                      {isVisible ? <CountUp end={3.5} decimals={1} duration={2} /> : 3.5}
+                      {isVisible ? <CountUp end={3.5} decimals={1} duration={2.5} /> : 3.5}
                     </span>
                     X
                   </h3>
@@ -113,4 +97,4 @@ const ContentSectionOne = () => {
   );
 };
 
-export default memo(ContentSectionOne);
+export default ContentSectionOne;

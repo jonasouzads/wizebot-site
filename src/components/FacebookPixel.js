@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { useEffect, useCallback } from 'react';
+import { useEffect } from 'react';
 
 // Eventos permitidos (excluindo Purchase que será tratado pela plataforma de vendas)
 const ALLOWED_EVENTS = [
@@ -12,53 +12,20 @@ const ALLOWED_EVENTS = [
   'CompleteRegistration', // Quando completa um formulário
 ];
 
-let pixelInitialized = false;
-
 export default function FacebookPixel() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (!pixelInitialized) {
-      // Inicializa o objeto fbq
-      window.fbq = window.fbq || function() {
-        (window.fbq.q = window.fbq.q || []).push(arguments);
-      };
-      window._fbq = window._fbq || window.fbq;
-
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://connect.facebook.net/en_US/fbevents.js';
-      
-      script.onload = () => {
-        if (!pixelInitialized) {
-          window.fbq('init', '1002296057592912');
-          window.fbq('track', 'PageView');
-          pixelInitialized = true;
-        }
-      };
-
-      // Adiciona o noscript element para fallback
-      const noscript = document.createElement('noscript');
-      const img = document.createElement('img');
-      img.height = 1;
-      img.width = 1;
-      img.style.display = 'none';
-      img.src = 'https://www.facebook.com/tr?id=1002296057592912&ev=PageView&noscript=1';
-      noscript.appendChild(img);
-
-      document.head.appendChild(script);
-      document.body.appendChild(noscript);
-    } else {
-      window.fbq('track', 'PageView');
-    }
-
-    return () => {
-      // Cleanup se necessário
-    };
+    import('react-facebook-pixel')
+      .then((x) => x.default)
+      .then((ReactPixel) => {
+        ReactPixel.init('1002296057592912');
+        ReactPixel.pageView();
+      });
   }, [pathname]);
 
   // Função para enviar eventos tanto para o Pixel quanto para a Conversion API
-  const trackEvent = useCallback(async (eventName, eventData = {}, userData = {}) => {
+  const trackEvent = async (eventName, eventData = {}, userData = {}) => {
     // Verificar se é um evento permitido
     if (!ALLOWED_EVENTS.includes(eventName)) {
       console.warn(`Evento ${eventName} não permitido. Use apenas: ${ALLOWED_EVENTS.join(', ')}`);
@@ -66,9 +33,8 @@ export default function FacebookPixel() {
     }
 
     // Enviar para o Pixel do Facebook
-    if (window.fbq) {
-      window.fbq('track', eventName, eventData);
-    }
+    const ReactPixel = await import('react-facebook-pixel').then(x => x.default);
+    ReactPixel.track(eventName, eventData);
 
     // Enviar para a Conversion API
     try {
@@ -89,7 +55,7 @@ export default function FacebookPixel() {
     } catch (error) {
       console.error('Error sending conversion event:', error);
     }
-  }, []);
+  };
 
   // Expor a função trackEvent globalmente
   if (typeof window !== 'undefined') {

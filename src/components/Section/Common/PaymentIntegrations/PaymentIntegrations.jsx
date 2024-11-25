@@ -1,100 +1,108 @@
-'use client';
+"use client";
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
-import dynamic from 'next/dynamic';
-import { memo, useCallback, useMemo, useState, useEffect } from 'react';
-import { motion, LazyMotion, domAnimation } from 'framer-motion';
-
-// Componentes pesados carregados dinamicamente
-const PaymentLogos = dynamic(() => import('./PaymentLogos'), {
-  ssr: false,
-  loading: () => <div className="payment-logos-placeholder h-[200px]" />
-});
-
-const PaymentIntegrations = memo(function PaymentIntegrations() {
+const PaymentIntegrations = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Memoize animation variants
-  const containerVariants = useMemo(() => ({
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.3, ease: "easeOut" }
-    }
-  }), []);
-
   useEffect(() => {
-    const timer = requestAnimationFrame(() => setIsVisible(true));
-    return () => cancelAnimationFrame(timer);
+    setIsVisible(true);
   }, []);
 
-  // Memoize section style
-  const sectionStyle = useMemo(() => ({
-    background: 'var(--white)',
-    padding: '50px 0',
-    contain: 'content',
-  }), []);
-
-  // Render otimizado com useMemo
-  const renderContent = useMemo(() => (
-    <div className="container mx-auto px-4">
-      <LazyMotion features={domAnimation}>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={containerVariants}
-          className="text-center"
-        >
-          <h2 className="text-2xl md:text-3xl font-bold mb-8">
-            Automatize suas vendas com integrações poderosas
-          </h2>
-          <div className="text-gray-600 mb-12 max-w-3xl mx-auto">
-            <p className="mb-1">
-              A Wizebot se conecta com as principais plataformas de pagamento do mercado para recuperar vendas perdidas e aumentar sua conversão automaticamente
-            </p>
-            <p>
-              Envie acessos aos produtos, links de pagamento e acompanhe transações em tempo real sem precisar fazer nada manualmente
-            </p>
-          </div>
-          <div className={`payment-logos ${isVisible ? 'visible' : ''}`}>
-            <PaymentLogos />
-          </div>
-        </motion.div>
-      </LazyMotion>
-    </div>
-  ), [containerVariants, isVisible]);
+  const logos = {
+    row1: [
+      '/images/payment/logo (1).png',
+      '/images/payment/logo (2).png',
+      '/images/payment/logo (3).png',
+      '/images/payment/logo (4).png',
+      '/images/payment/logo (5).png',
+      '/images/payment/logo (6).png',
+      '/images/payment/logo (7).png',
+      '/images/payment/logo (8).png',
+      '/images/payment/logo (9).png',
+      '/images/payment/logo (10).png',
+    ],
+    row2: [
+      '/images/payment/logo (11).png',
+      '/images/payment/logo (12).png',
+      '/images/payment/logo (13).png',
+      '/images/payment/logo (14).png',
+      '/images/payment/logo (15).png',
+      '/images/payment/logo (16).png',
+      '/images/payment/logo (17).png',
+      '/images/payment/logo (18).png',
+      '/images/payment/logo (19).png',
+      '/images/payment/logo (20).png',
+    ],
+    row3: [
+      '/images/payment/logo (21).png',
+      '/images/payment/logo (22).png',
+      '/images/payment/logo (23).png',
+      '/images/payment/logo (24).png',
+      '/images/payment/logo (25).png',
+      '/images/payment/logo (26).png',
+      '/images/payment/logo (27).png',
+      '/images/payment/logo (28).png',
+      '/images/payment/logo (29).png',
+      '/images/payment/logo (30).png',
+    ],
+  };
 
   return (
-    <section style={sectionStyle}>
-      {renderContent}
+    <div className="wizebot-payment-integrations">
+      <div className="container">
+        <div className="description-text">
+          <p>
+            Faça recuperação de vendas perdidas e aumente sua taxa de conversão com nossas integrações. 
+            Envie automaticamente acesso aos produtos, links de pagamento e acompanhe o status das transações 
+            em tempo real através das principais plataformas do mercado.
+          </p>
+        </div>
+        <div className={`wizebot-payment-logos ${isVisible ? 'visible' : ''}`}>
+          {Object.entries(logos).map(([rowKey, rowLogos], rowIndex) => (
+            <div key={rowKey} className={`logo-row ${rowIndex % 2 === 0 ? 'slide-right' : 'slide-left'}`}>
+              <div className="logo-track">
+                {[...rowLogos, ...rowLogos].map((logo, index) => (
+                  <div key={index} className="logo-item">
+                    <Image
+                      src={logo}
+                      alt={`Payment Platform ${index + 1 + (rowIndex * 10)}`}
+                      width={120}
+                      height={40}
+                      className="payment-logo"
+                      loading="eager"
+                      priority={index < 3}
+                      style={{ filter: 'none' }}
+                      quality={90}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
       <style jsx>{`
-        .payment-logos {
-          opacity: 0;
-          transform: translateY(20px);
-          transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-          contain: content;
+        .logo-item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 15px;
         }
-        .payment-logos.visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
+
         @media (max-width: 768px) {
-          .payment-logos {
-            transform: translateY(10px);
+          .logo-item {
+            padding: 0 10px;
           }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .payment-logos {
-            transition: none;
-            transform: none;
+          
+          :global(.payment-logo) {
+            width: 100px !important;
+            height: auto !important;
           }
         }
       `}</style>
-    </section>
+    </div>
   );
-});
-
-PaymentIntegrations.displayName = 'PaymentIntegrations';
+};
 
 export default PaymentIntegrations;
