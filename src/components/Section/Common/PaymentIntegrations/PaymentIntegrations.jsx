@@ -1,131 +1,94 @@
-"use client";
-import { memo, useCallback, useEffect, useMemo, useState } from 'react';
+'use client';
+
+import dynamic from 'next/dynamic';
+import { memo, useCallback, useMemo, useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-const LogoItem = memo(({ logo, index, rowIndex }) => (
-  <div className="logo-item">
-    <Image
-      src={logo}
-      alt={`Payment Platform ${index + 1 + (rowIndex * 10)}`}
-      width={120}
-      height={40}
-      className="payment-logo"
-      loading={index < 6 ? "eager" : "lazy"}
-      priority={index < 3}
-      style={{ filter: 'none' }}
-      quality={75}
-    />
-  </div>
-));
+// Componentes pesados carregados dinamicamente
+const PaymentLogos = dynamic(() => import('./PaymentLogos'), {
+  ssr: false,
+  loading: () => <div className="payment-logos-placeholder" />
+});
 
-LogoItem.displayName = 'LogoItem';
-
-const PaymentIntegrations = () => {
+const PaymentIntegrations = memo(function PaymentIntegrations() {
   const [isVisible, setIsVisible] = useState(false);
+
+  // Memoize animation variants
+  const containerVariants = useMemo(() => ({
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" }
+    }
+  }), []);
 
   useEffect(() => {
     const timer = requestAnimationFrame(() => setIsVisible(true));
     return () => cancelAnimationFrame(timer);
   }, []);
 
-  const logos = useMemo(() => ({
-    row1: [
-      '/images/payment/logo (1).png',
-      '/images/payment/logo (2).png',
-      '/images/payment/logo (3).png',
-      '/images/payment/logo (4).png',
-      '/images/payment/logo (5).png',
-      '/images/payment/logo (6).png',
-      '/images/payment/logo (7).png',
-      '/images/payment/logo (8).png',
-      '/images/payment/logo (9).png',
-      '/images/payment/logo (10).png',
-    ],
-    row2: [
-      '/images/payment/logo (11).png',
-      '/images/payment/logo (12).png',
-      '/images/payment/logo (13).png',
-      '/images/payment/logo (14).png',
-      '/images/payment/logo (15).png',
-      '/images/payment/logo (16).png',
-      '/images/payment/logo (17).png',
-      '/images/payment/logo (18).png',
-      '/images/payment/logo (19).png',
-      '/images/payment/logo (20).png',
-    ],
-    row3: [
-      '/images/payment/logo (21).png',
-      '/images/payment/logo (22).png',
-      '/images/payment/logo (23).png',
-      '/images/payment/logo (24).png',
-      '/images/payment/logo (25).png',
-      '/images/payment/logo (26).png',
-      '/images/payment/logo (27).png',
-      '/images/payment/logo (28).png',
-      '/images/payment/logo (29).png',
-      '/images/payment/logo (30).png',
-    ],
+  // Memoize section style
+  const sectionStyle = useMemo(() => ({
+    background: 'var(--white)',
+    padding: '50px 0',
+    '@media (max-width: 768px)': {
+      padding: '30px 0'
+    }
   }), []);
 
-  const renderLogoRow = useCallback((rowKey, rowLogos, rowIndex) => (
-    <div key={rowKey} className={`logo-row ${rowIndex % 2 === 0 ? 'slide-right' : 'slide-left'}`}>
-      <div className="logo-track">
-        {[...rowLogos].map((logo, index) => (
-          <LogoItem
-            key={`${rowKey}-${index}`}
-            logo={logo}
-            index={index}
-            rowIndex={rowIndex}
-          />
-        ))}
-      </div>
-    </div>
-  ), []);
-
-  return (
-    <div className="wizebot-payment-integrations">
-      <div className="container">
-        <div className="description-text">
+  // Render otimizado com useMemo
+  const renderContent = useMemo(() => (
+    <div className="container mx-auto px-4">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={containerVariants}
+        className="text-center"
+      >
+        <h2 className="text-2xl md:text-3xl font-bold mb-8">
+          Automatize suas vendas com integrações poderosas
+        </h2>
+        <div className="text-gray-600 mb-12 max-w-3xl mx-auto">
+          <p className="mb-1">
+            A Wizebot se conecta com as principais plataformas de pagamento do mercado para recuperar vendas perdidas e aumentar sua conversão automaticamente
+          </p>
           <p>
-            Faça recuperação de vendas perdidas e aumente sua taxa de conversão com nossas integrações. 
-            Envie automaticamente acesso aos produtos, links de pagamento e acompanhe o status das transações 
-            em tempo real através das principais plataformas do mercado.
+            Envie acessos aos produtos, links de pagamento e acompanhe transações em tempo real sem precisar fazer nada manualmente
           </p>
         </div>
-        <div className={`wizebot-payment-logos ${isVisible ? 'visible' : ''}`}>
-          {Object.entries(logos).map(([rowKey, rowLogos], rowIndex) => 
-            renderLogoRow(rowKey, rowLogos, rowIndex)
-          )}
+        <div className={`payment-logos ${isVisible ? 'visible' : ''}`}>
+          <PaymentLogos />
         </div>
-      </div>
+      </motion.div>
+    </div>
+  ), [containerVariants, isVisible]);
+
+  return (
+    <section style={sectionStyle}>
+      {renderContent}
       <style jsx>{`
-        .logo-item {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 0 12px;
-          will-change: transform;
+        .payment-logos {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.5s ease-out, transform 0.5s ease-out;
         }
-
-        .logo-track {
-          display: flex;
-          align-items: center;
-          transform: translateZ(0);
+        .payment-logos.visible {
+          opacity: 1;
+          transform: translateY(0);
         }
-
         @media (max-width: 768px) {
-          .logo-item {
-            padding: 0 8px;
-          }
-          
-          :global(.payment-logo) {
-            width: 90px !important;
-            height: auto !important;
+          .payment-logos {
+            transform: translateY(10px);
           }
         }
       `}</style>
-    </div>
+    </section>
   );
-};
+});
 
-export default memo(PaymentIntegrations);
+PaymentIntegrations.displayName = 'PaymentIntegrations';
+
+export default PaymentIntegrations;
