@@ -77,6 +77,19 @@ const CtaTwo = () => {
         throw new Error(data.error || 'Ocorreu um erro ao processar sua solicitação.');
       }
 
+      // Enviar evento de lead para o Facebook
+      if (typeof window.fbTrackEvent === 'function') {
+        window.fbTrackEvent('Lead', {
+          content_name: 'Teste Grátis',
+          content_category: 'Trial Signup',
+          status: 'success'
+        }, {
+          em: formData.email, // O Facebook vai fazer o hash automaticamente
+          ph: formData.phone, // O Facebook vai fazer o hash automaticamente
+          fn: formData.name   // O Facebook vai fazer o hash automaticamente
+        });
+      }
+
       // Redirecionar para o aplicativo
       window.location.href = data.directLoginUrl;
     } catch (error) {

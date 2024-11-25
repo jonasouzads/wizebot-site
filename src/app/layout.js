@@ -6,6 +6,7 @@ import "~/assets/css/main.css";
 import "~/assets/css/react-adjustment.css";
 import "~/assets/css/payment-integrations.css";
 import WhatsAppButton from "~/components/Ui/WhatsAppButton/WhatsAppButton";
+import FacebookPixel from "~/components/FacebookPixel";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
         <Analytics />
       </head>
       <body className={inter.className} style={{ scrollBehavior: 'smooth' }}>
+        <FacebookPixel />
         {children}
         <WhatsAppButton />
       </body>
