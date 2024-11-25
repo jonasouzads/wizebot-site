@@ -16,7 +16,7 @@ const supabase = createClient(
 
 const API_TOKEN = process.env.WIZEBOT_API_TOKEN;
 const API_BASE_URL = 'https://app.wizebot.com.br/api/v1';
-const WEBHOOK_URL = 'https://webhook.wizebot.com.br/645t34gertgef';
+const WEBHOOK_URL = 'https://n8n.wizebot.com.br/webhook/5a9531bc-7d94-4594-8079-a8f6740c32f5';
 
 function formatPhoneNumber(phone) {
   if (!phone) {
