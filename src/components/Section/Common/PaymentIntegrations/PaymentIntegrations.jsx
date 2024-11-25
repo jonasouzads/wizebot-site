@@ -59,55 +59,48 @@ const PaymentIntegrations = () => {
           </p>
         </div>
         <div className={`wizebot-payment-logos ${isVisible ? 'visible' : ''}`}>
-          <div className="logo-row slide-right">
-            <div className="logo-track">
-              {[...logos.row1, ...logos.row1].map((logo, index) => (
-                <div key={index} className="logo-item">
-                  <Image
-                    src={logo}
-                    alt={`Payment Platform ${index + 1}`}
-                    width={120}
-                    height={40}
-                    className="payment-logo"
-                  />
-                </div>
-              ))}
+          {Object.entries(logos).map(([rowKey, rowLogos], rowIndex) => (
+            <div key={rowKey} className={`logo-row ${rowIndex % 2 === 0 ? 'slide-right' : 'slide-left'}`}>
+              <div className="logo-track">
+                {[...rowLogos, ...rowLogos].map((logo, index) => (
+                  <div key={index} className="logo-item">
+                    <Image
+                      src={logo}
+                      alt={`Payment Platform ${index + 1 + (rowIndex * 10)}`}
+                      width={120}
+                      height={40}
+                      className="payment-logo"
+                      loading="eager"
+                      priority={index < 3}
+                      style={{ filter: 'none' }}
+                      quality={90}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-
-          <div className="logo-row slide-left">
-            <div className="logo-track">
-              {[...logos.row2, ...logos.row2].map((logo, index) => (
-                <div key={index} className="logo-item">
-                  <Image
-                    src={logo}
-                    alt={`Payment Platform ${index + 11}`}
-                    width={120}
-                    height={40}
-                    className="payment-logo"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="logo-row slide-right">
-            <div className="logo-track">
-              {[...logos.row3, ...logos.row3].map((logo, index) => (
-                <div key={index} className="logo-item">
-                  <Image
-                    src={logo}
-                    alt={`Payment Platform ${index + 21}`}
-                    width={120}
-                    height={40}
-                    className="payment-logo"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
+      <style jsx>{`
+        .logo-item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 15px;
+        }
+
+        @media (max-width: 768px) {
+          .logo-item {
+            padding: 0 10px;
+          }
+          
+          :global(.payment-logo) {
+            width: 100px !important;
+            height: auto !important;
+          }
+        }
+      `}</style>
     </div>
   );
 };
