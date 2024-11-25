@@ -172,6 +172,7 @@ export async function POST(request) {
             phone: formattedPhone,
             package_id: '1287',
             expired_date: formattedExpiration,
+            direct_login: createUserData.message.direct_login_url,
             utm_data: {
               source: utm_source,
               medium: utm_medium,
