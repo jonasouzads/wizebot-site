@@ -1,15 +1,34 @@
 "use client";
-import { useEffect, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
+
+const LogoItem = memo(({ logo, index, rowIndex }) => (
+  <div className="logo-item">
+    <Image
+      src={logo}
+      alt={`Payment Platform ${index + 1 + (rowIndex * 10)}`}
+      width={120}
+      height={40}
+      className="payment-logo"
+      loading={index < 6 ? "eager" : "lazy"}
+      priority={index < 3}
+      style={{ filter: 'none' }}
+      quality={75}
+    />
+  </div>
+));
+
+LogoItem.displayName = 'LogoItem';
 
 const PaymentIntegrations = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true);
+    const timer = requestAnimationFrame(() => setIsVisible(true));
+    return () => cancelAnimationFrame(timer);
   }, []);
 
-  const logos = {
+  const logos = useMemo(() => ({
     row1: [
       '/images/payment/logo (1).png',
       '/images/payment/logo (2).png',
@@ -46,7 +65,22 @@ const PaymentIntegrations = () => {
       '/images/payment/logo (29).png',
       '/images/payment/logo (30).png',
     ],
-  };
+  }), []);
+
+  const renderLogoRow = useCallback((rowKey, rowLogos, rowIndex) => (
+    <div key={rowKey} className={`logo-row ${rowIndex % 2 === 0 ? 'slide-right' : 'slide-left'}`}>
+      <div className="logo-track">
+        {[...rowLogos].map((logo, index) => (
+          <LogoItem
+            key={`${rowKey}-${index}`}
+            logo={logo}
+            index={index}
+            rowIndex={rowIndex}
+          />
+        ))}
+      </div>
+    </div>
+  ), []);
 
   return (
     <div className="wizebot-payment-integrations">
@@ -59,27 +93,9 @@ const PaymentIntegrations = () => {
           </p>
         </div>
         <div className={`wizebot-payment-logos ${isVisible ? 'visible' : ''}`}>
-          {Object.entries(logos).map(([rowKey, rowLogos], rowIndex) => (
-            <div key={rowKey} className={`logo-row ${rowIndex % 2 === 0 ? 'slide-right' : 'slide-left'}`}>
-              <div className="logo-track">
-                {[...rowLogos, ...rowLogos].map((logo, index) => (
-                  <div key={index} className="logo-item">
-                    <Image
-                      src={logo}
-                      alt={`Payment Platform ${index + 1 + (rowIndex * 10)}`}
-                      width={120}
-                      height={40}
-                      className="payment-logo"
-                      loading="eager"
-                      priority={index < 3}
-                      style={{ filter: 'none' }}
-                      quality={90}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
+          {Object.entries(logos).map(([rowKey, rowLogos], rowIndex) => 
+            renderLogoRow(rowKey, rowLogos, rowIndex)
+          )}
         </div>
       </div>
       <style jsx>{`
@@ -87,16 +103,23 @@ const PaymentIntegrations = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 0 15px;
+          padding: 0 12px;
+          will-change: transform;
+        }
+
+        .logo-track {
+          display: flex;
+          align-items: center;
+          transform: translateZ(0);
         }
 
         @media (max-width: 768px) {
           .logo-item {
-            padding: 0 10px;
+            padding: 0 8px;
           }
           
           :global(.payment-logo) {
-            width: 100px !important;
+            width: 90px !important;
             height: auto !important;
           }
         }
@@ -105,4 +128,4 @@ const PaymentIntegrations = () => {
   );
 };
 
-export default PaymentIntegrations;
+export default memo(PaymentIntegrations);
