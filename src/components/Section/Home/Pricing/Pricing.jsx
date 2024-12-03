@@ -156,7 +156,7 @@ const PricingSection = () => {
                 </p>
               </div>
               <div className="wizebot-pricing-description">
-                <p>Solução completa para grandes empresas e agências</p>
+                <p>Solução completa para grandes empresas</p>
               </div>
               <div className="wizebot-pricing-body">
                 <p>O plano inclui:</p>
@@ -167,7 +167,7 @@ const PricingSection = () => {
                   </li>
                   <li>
                     <CheckIcon />
-                    Contatos ilimitados
+                    Limite de Contatos: 30000
                   </li>
                   <li>
                     <CheckIcon />

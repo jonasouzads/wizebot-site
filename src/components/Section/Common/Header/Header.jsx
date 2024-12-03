@@ -9,7 +9,6 @@ const Header = ({ logoSrc, roundedBtn }) => {
   const [subMenuArray, setSubMenuArray] = useState([]);
   const [subMenuTextArray, setSubMenuTextArray] = useState([]);
 
-
   const menuMainClickHandler = (e) => {
     if (typeof window !== "undefined" && window.innerWidth <= 991) {
       document.querySelectorAll(".nav-item").forEach(item => {
@@ -66,7 +65,7 @@ const Header = ({ logoSrc, roundedBtn }) => {
       submenu.classList.remove("active");
       submenu.style.animation = "";
     });
-  
+
     document.querySelector(".go-back").classList.remove("active");
   };
 
@@ -168,18 +167,23 @@ const Header = ({ logoSrc, roundedBtn }) => {
                       </Link>
                     </li>
                     <li className="sub-menu--item">
-                      <Link href="/gerador-whatsapp">
-                        <span className="menu-item-text">Gerador de Links para WhatsApp</span>
+                      <Link href="https://tools.wizebot.com.br/links" target="_blank">
+                        <span className="menu-item-text">Gerador de Links</span>
                       </Link>
                     </li>
                     <li className="sub-menu--item">
-                      <Link href="/organizador-contatos">
+                      <Link href="https://tools.wizebot.com.br/organizar" target="_blank">
                         <span className="menu-item-text">Organizador de Contatos</span>
                       </Link>
                     </li>
                     <li className="sub-menu--item">
-                      <Link href="/gerador-qrcode">
+                      <Link href="https://tools.wizebot.com.br/qrcode" target="_blank">
                         <span className="menu-item-text">Gerador de QR Code</span>
+                      </Link>
+                    </li>
+                    <li className="sub-menu--item">
+                      <Link href="https://tools.wizebot.com.br/mensagens" target="_blank">
+                        <span className="menu-item-text">Mensagem de Modelo com IA</span>
                       </Link>
                     </li>
                   </ul>

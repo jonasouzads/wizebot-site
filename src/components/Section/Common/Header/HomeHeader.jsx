@@ -185,18 +185,23 @@ const HomeHeader = ({ logoSrc, roundedBtn }) => {
                       </Link>
                     </li>
                     <li className="sub-menu--item">
-                      <Link href="/gerador-whatsapp">
-                        <span className="menu-item-text">Gerador de Links para WhatsApp</span>
+                      <Link href="https://tools.wizebot.com.br/links" target="_blank">
+                        <span className="menu-item-text">Gerador de Links</span>
                       </Link>
                     </li>
                     <li className="sub-menu--item">
-                      <Link href="/organizador-contatos">
+                      <Link href="https://tools.wizebot.com.br/organizar" target="_blank">
                         <span className="menu-item-text">Organizador de Contatos</span>
                       </Link>
                     </li>
                     <li className="sub-menu--item">
-                      <Link href="/gerador-qrcode">
+                      <Link href="https://tools.wizebot.com.br/qrcode" target="_blank">
                         <span className="menu-item-text">Gerador de QR Code</span>
+                      </Link>
+                    </li>
+                    <li className="sub-menu--item">
+                      <Link href="https://tools.wizebot.com.br/mensagens" target="_blank">
+                        <span className="menu-item-text">Mensagem de Modelo com IA</span>
                       </Link>
                     </li>
                   </ul>

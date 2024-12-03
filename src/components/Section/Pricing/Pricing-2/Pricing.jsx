@@ -203,7 +203,7 @@ const PricingSectionTwo = () => {
                     <tr>
                       <td>WhatsApp Flows</td>
                       <td><MinusIcon /></td>
-                      <td><CheckIcon /></td>
+                      <td><MinusIcon /></td>
                       <td><CheckIcon /></td>
                     </tr>
                     <tr>

@@ -14,6 +14,7 @@ import PricingTwo from "~/components/Section/Pricing/Pricing-2/Pricing";
 import Faq from "~/components/Section/Faq/Faq/Faq";
 import Testimonial from "~/components/Section/Home/Testimonial/Testimonial";
 import Header from "~/components/Section/Common/Header/HomeHeader";
+import MetaPartnership from "~/components/Section/Home/MetaPartnership/MetaPartnership";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <HeroSection />
       <BrandSection />
       <FeatureSection />
+      <MetaPartnership />
       <ContentSectionOne />
       <ContentSectionTwo />
       <ContentSectionTree />
