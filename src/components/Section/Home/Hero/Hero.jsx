@@ -90,12 +90,19 @@ const HeroSection = () => {
             <div className="wizebot-hero-thumb wow fadeInUpX">
               <Image
                 src="/images/v1/hero-mocup2.gif"
-                alt="Hero Mockup"
-                width={600}
-                height={400}
-                priority={true}
+                alt="WhatsApp Marketing"
+                width={640}
+                height={427}
                 className="img-fluid"
-                style={{ maxWidth: '100%', height: 'auto' }}
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  maxWidth: '640px',
+                  margin: '0 auto',
+                  display: 'block'
+                }}
               />
             </div>
           </div>

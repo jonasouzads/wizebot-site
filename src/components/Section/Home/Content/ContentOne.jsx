@@ -48,7 +48,7 @@ const ContentSectionOne = () => {
                   width={600}
                   height={400}
                   className="img-fluid rounded-4 shadow-lg"
-                  style={{ width: '100%', height: 'auto' }}
+                  style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
                   priority
                 />
               </motion.div>
