@@ -185,7 +185,7 @@ const PricingSectionTwo = () => {
                     <tr>
                       <td>Integração via API</td>
                       <td><MinusIcon /></td>
-                      <td><CheckIcon /></td>
+                      <td><MinusIcon /></td>
                       <td><CheckIcon /></td>
                     </tr>
                     <tr>
