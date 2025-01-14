@@ -1,0 +1,256 @@
+.wizebot-thank-you-section {
+  padding: 80px 0;
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 100%);
+  position: relative;
+}
+
+.wizebot-thank-you-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(66, 153, 225, 0.2) 50%, transparent 100%);
+}
+
+.thank-you-header {
+  margin-bottom: 60px;
+}
+
+.thank-you-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #132538;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.wave {
+  animation: wave 2s infinite;
+  display: inline-block;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.thank-you-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #566b8d;
+  margin-bottom: 48px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thank-you-links {
+  display: grid;
+  gap: 16px;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.link-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.link-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.link-card a {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  text-decoration: none;
+  color: #132538;
+  gap: 20px;
+  position: relative;
+}
+
+.icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-wrapper .icon {
+  font-size: 24px;
+  color: white;
+}
+
+.icon-wrapper.whatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+}
+
+.icon-wrapper.docs {
+  background: linear-gradient(135deg, #4299E1 0%, #2B6CB0 100%);
+}
+
+.icon-wrapper.youtube {
+  background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+}
+
+.link-content {
+  flex: 1;
+  text-align: left;
+}
+
+.link-card h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.link-card p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #566b8d;
+}
+
+.arrow-icon {
+  font-size: 16px;
+  color: #566b8d;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.link-card:hover .arrow-icon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.start-button-wrapper {
+  margin-top: 48px;
+}
+
+.credentials-notice {
+  background: rgba(66, 153, 225, 0.1);
+  border: 1px solid rgba(66, 153, 225, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.notice-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-6px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+.credentials-notice p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #2B6CB0;
+}
+
+.credentials-notice span {
+  font-weight: 600;
+  color: #2B6CB0;
+}
+
+.start-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #4299E1 0%, #2B6CB0 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(66, 153, 225, 0.3);
+}
+
+.start-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(66, 153, 225, 0.4);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .wizebot-thank-you-section {
+    padding: 60px 0;
+  }
+
+  .thank-you-header {
+    margin-bottom: 40px;
+  }
+
+  .thank-you-title {
+    font-size: 32px;
+  }
+
+  .thank-you-text {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+
+  .link-card h3 {
+    font-size: 16px;
+  }
+
+  .link-card p {
+    font-size: 13px;
+  }
+
+  .icon-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon-wrapper .icon {
+    font-size: 20px;
+  }
+
+  .start-button {
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+}
