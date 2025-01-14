@@ -88,9 +88,9 @@ const PricingSectionTwo = () => {
                     </tr>
                     <tr>
                       <td>Limite de Contatos</td>
-                      <td>5.000</td>
-                      <td>15.000</td>
-                      <td>30.000</td>
+                      <td>2.000</td>
+                      <td>10.000</td>
+                      <td>20.000</td>
                     </tr>
                     <tr>
                       <td>Acesso ao Instagram</td>

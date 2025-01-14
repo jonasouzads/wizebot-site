@@ -73,7 +73,7 @@ const PricingSection = () => {
                   </li>
                   <li>
                     <CheckIcon />
-                    Limite de Contatos: 5000
+                    Limite de Contatos: 2000
                   </li>
                   <li>
                     <CheckIcon />
@@ -120,7 +120,7 @@ const PricingSection = () => {
                   </li>
                   <li>
                     <CheckIcon />
-                    Limite de Contatos: 15000
+                    Limite de Contatos: 10000
                   </li>
                   <li>
                     <CheckIcon />
@@ -167,7 +167,7 @@ const PricingSection = () => {
                   </li>
                   <li>
                     <CheckIcon />
-                    Limite de Contatos: 30000
+                    Limite de Contatos: 20000
                   </li>
                   <li>
                     <CheckIcon />

@@ -57,7 +57,7 @@ export default function FacebookPixel() {
     }
   };
 
-  // Expor a função trackEvent globalmente
+  // Expor a função trackEvent global
   if (typeof window !== 'undefined') {
     window.fbTrackEvent = trackEvent;
   }
