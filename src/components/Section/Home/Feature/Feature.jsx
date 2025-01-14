@@ -2,7 +2,7 @@ import FeatureCardTwo from "~/components/Ui/Cards/FeatureTwo";
 
 const FeatureSection = () => {
   return (
-    <div className="section wizebot-section-padding3">
+    <div className="section wizebot-section-padding3" style={{ background: '#ffffff' }}>
       <div className="container">
         <div className="wizebot-section-title center">
           <h2>Por Que a Wizebot É Sua Melhor Escolha</h2>

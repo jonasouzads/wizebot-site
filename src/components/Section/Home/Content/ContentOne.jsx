@@ -26,7 +26,7 @@ const ContentSectionOne = () => {
   }, []);
 
   return (
-    <div className="section wizebot-section-padding2 overflow-hidden">
+    <div className="section wizebot-section-padding2 overflow-hidden" style={{ background: '#ffffff' }}>
       <div id="wizebot-counter"></div>
       <div className="container position-relative">
         <div className="row align-items-center justify-content-center">

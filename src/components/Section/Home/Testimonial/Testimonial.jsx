@@ -64,7 +64,7 @@ const testimonials = [
 
 const TestimonialSection = () => {
   return (
-    <div className="section wizebot-section-padding2" style={{ background: '#f8f9fa' }}>
+    <div className="section wizebot-section-padding2" style={{ background: '#ffffff' }}>
       <div className="container">
         <div className="wizebot-section-title center mb-5">
           <h2>O que nossos clientes dizem</h2>

@@ -20,7 +20,7 @@ const PricingSection = () => {
   );
 
   return (
-    <div className="section wizebot-section-padding3">
+    <div className="section wizebot-section-padding3" style={{ background: '#ffffff' }}>
       <div className="container">
         <div className="wizebot-section-title center">
           <h2>Escolha o Plano Ideal Para Seu Negócio</h2>

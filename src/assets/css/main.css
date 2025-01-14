@@ -1182,7 +1182,7 @@ a.log-in-btn:hover:after {
   padding: 8px 25px;
   background-color: #fff;
   color: #333;
-  border-radius: 30px;
+  border-radius: 5px;
   font-weight: 500;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -1192,11 +1192,6 @@ a.log-in-btn:hover:after {
   text-align: center;
 }
 
-.wizebot-login-btn:hover {
-  background-color: #f0f0f0;
-  transform: translateY(-2px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
 
 @media (max-width: 768px) {
   .form-feedback {
