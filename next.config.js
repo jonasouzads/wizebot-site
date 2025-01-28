@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+<<<<<<< HEAD
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
@@ -41,6 +42,14 @@ const nextConfig = {
       };
     }
     return config;
+=======
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'wizebot.com.br',
+      },
+    ],
+>>>>>>> 84defd69d576bb2a61384c1001bd8b917f1b030d
   },
 }
 

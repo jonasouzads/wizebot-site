@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+<<<<<<< HEAD
     "lint": "next lint",
     "export": "next build && next export"
   },
@@ -34,5 +35,36 @@
     "critters": "^0.0.25",
     "eslint": "^8",
     "eslint-config-next": "14.2.2"
+=======
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@radix-ui/react-accordion": "^1.2.1",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@supabase/supabase-js": "^2.46.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.5.1",
+    "facebook-nodejs-business-sdk": "^21.0.5",
+    "framer-motion": "^11.13.1",
+    "lucide-react": "^0.465.0",
+    "next": "14.2.16",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^5.4.0",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/facebook-nodejs-business-sdk": "^20.0.2",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.16",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+>>>>>>> 84defd69d576bb2a61384c1001bd8b917f1b030d
   }
 }

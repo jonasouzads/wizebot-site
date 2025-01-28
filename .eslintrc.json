@@ -1,3 +1,7 @@
 {
+<<<<<<< HEAD
   "extends": "next/core-web-vitals"
+=======
+  "extends": ["next/core-web-vitals", "next/typescript"]
+>>>>>>> 84defd69d576bb2a61384c1001bd8b917f1b030d
 }
